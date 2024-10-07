@@ -6,29 +6,27 @@ button {
   cursor: pointer;
 }
 
-.wrapper {
+.box {
+  width: 45%;
   display: flex;
-  padding: 4rem;
-}
-
-.cards-section,
-.form-section {
-  width: 50%;
 }
 
 .cards-section {
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  padding: 1rem;
+  width: 55%;
+}
+
+/* CARDS SECTION */
+
+.cards-section {
+  padding: 2rem;
 }
 
 .card-front,
 .card-back {
-  margin: 1rem;
   box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.15);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   max-width: 28rem;
-  height: 15.5rem;
+  height: 15rem;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative;
@@ -37,7 +35,6 @@ button {
 /* CARD FRONT */
 
 .card-front {
-  margin-right: 5rem;
   color: hsl(270, 3%, 87%);
   letter-spacing: 2px;
   background-image: url("/bg-card-front.png");
@@ -45,6 +42,8 @@ button {
   flex-direction: column;
   justify-content: flex-end;
   padding: 2rem;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .card-front::after {
@@ -71,24 +70,29 @@ button {
 /* CARD BACK */
 
 .card-back {
-  margin-left: 5rem;
   background-image: url("/bg-card-back.png");
+  margin-right: 2rem;
+  margin-left: auto;
+  margin-top: 2rem;
 }
 
 .card-back span {
   position: absolute;
   color: white;
   right: 3rem;
-  top: 7rem;
-  font-size: 1rem;
+  top: 6.7rem;
 }
+
+/* FORM SECTION */
 
 .form-section {
   display: flex;
   flex-direction: column;
-  padding: 5rem;
   justify-content: center;
   gap: 1rem;
+  max-width: 24rem;
+  padding: 1rem;
+  margin-left: 10%;
 }
 
 .form-section label {
@@ -128,7 +132,59 @@ button {
   width: 50%;
 }
 
-.exp-date {
+.form-footer .exp-date {
   display: flex;
   gap: 0.5rem;
+}
+
+/* SUCCESS SECTION */
+.success-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  max-width: 30rem;
+}
+
+.success-section img {
+  margin-bottom: 1rem;
+}
+
+.success-section h2 {
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.success-section p {
+  color: hsl(279, 6%, 55%);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.success-section button {
+  width: 100%;
+}
+
+@media screen and (max-width: 585px) {
+  .card-front {
+    left: 0 !important;
+  }
+
+  .card-back {
+    right: 0 !important;
+  }
+}
+
+@media screen and (max-width: 1010px) {
+  .card-back {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .card-front,
+  .card-back {
+    transform: scale(0.85);
+  }
 }
