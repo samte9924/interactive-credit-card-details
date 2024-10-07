@@ -1,8 +1,134 @@
-#root {
-  margin: 0;
+button {
+  background: hsl(278, 68%, 11%);
+  border: none;
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
 
-.App {
-  height: 100vh;
+.wrapper {
+  display: flex;
+  padding: 4rem;
+}
+
+.cards-section,
+.form-section {
+  width: 50%;
+}
+
+.cards-section {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  padding: 1rem;
+}
+
+.card-front,
+.card-back {
+  margin: 1rem;
+  box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+  max-width: 28rem;
+  height: 15.5rem;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+/* CARD FRONT */
+
+.card-front {
+  margin-right: 5rem;
+  color: hsl(270, 3%, 87%);
+  letter-spacing: 2px;
+  background-image: url("/bg-card-front.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+
+.card-front::after {
+  content: url("/card-logo.svg");
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.card-front h3 {
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  text-transform: uppercase;
   width: 100%;
+}
+
+/* CARD BACK */
+
+.card-back {
+  margin-left: 5rem;
+  background-image: url("/bg-card-back.png");
+}
+
+.card-back span {
+  position: absolute;
+  color: white;
+  right: 3rem;
+  top: 7rem;
+  font-size: 1rem;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.form-section label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.input {
+  outline: none;
+  background: hsl(0, 0%, 100%);
+  padding: 0.8rem;
+  color: hsl(278, 68%, 11%);
+  border: 1px solid hsl(270, 3%, 87%);
+  border-radius: 0.3rem;
+  font-weight: bold;
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.input:focus {
+  border: 1px solid hsl(278, 68%, 11%);
+}
+
+.input::placeholder {
+  font-weight: 500;
+  color: hsl(279, 6%, 55%);
+}
+
+.form-footer {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-footer > div {
+  width: 50%;
+}
+
+.exp-date {
+  display: flex;
+  gap: 0.5rem;
 }
